@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="shortcut icon" href="#" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="fog">
+    <figure class="absolute-bg">
+    </figure>
+    <div class="fog-container">
+      <div class="fog-img first-img"></div>
+      <div class="fog-img second-img"></div>
+    </div>
+    <div class="symbol"></div>
+    <div class="play-music">
+      <div id="music-animation" class="music-animation">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+        <span class="bar bar4"></span>
+        <span class="bar bar5"></span>
+      </div>
+      <div class="music-toggle"><a onClick="togglePlay()" id="toggle" data-text-swap="Music on">Music off</a></div>
+    </div>
+    <audio id="music" loop="loop" src="ost/dayofnight.mp3"></audio>
+  </div>
+  <div class="dark-header grid">
+    <div class="brand-logo">
+      <img class="logo" alt="logo" src="./symbol/babel.png">
+    </div>
+    <div class="content">
+      <nav class="main-nav">
+        <ul class="ul-nav">
+          <li><a class="li-home">Home</a></li>
+          <li><a class="li-detail">Detial</a></li>
+          <li><a class="li-photo">Photo</a></li>
+          <li><a class="li-game">Game</a></li>
+          <!-- <div class="square"></div> -->
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <section class="home">
+    <div class="home-div grid">
+      <div class="welcome">
+        <h4 class="h4-title">Welcome To</h4>
+        <h1 class="h1-title">Silent Hill</h1>
+
+      </div>
+    </div>
+
+  </section>
+  <section data-index="0" class="detail">
+    <div class="detail-div grid detail-pos">
+      <div class="text-area">
+        <h1 class="h1-title">Who am I ?</h1>
+        <h4 class="h4-title">我是 洪翊銘，目前大三，覺得學校頗無聊所以大學幾乎都在工作。
+        </h4>
+      </div>
+
+      <figure class="fig-p1 fig">
+        <img src="index-img/p1.jpg" alt="me">
+        <figcaption>2020 in Hanoi</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section data-index="0" class="detail">
+    <div class="detail-div2 grid detail-pos">
+      <div class="text-area2">
+        <h1 class="h1-title">美聯社</h1>
+        <h4 class="h4-title">大一時還不確定自己要做什麼，在美聯社打工，大概做了三個月覺得枯燥便離開了。<br>
+          (記客人的姓名電話其實滿好玩的，因為他麼都不帶卡報號碼又很慢，客人見到你記得他的反應其實滿好玩的)
+        </h4>
+      </div>
+      <figure class="fig-p2 fig">
+        <img src="index-img/high-school.jpg" alt="in hight school">
+        <figcaption>2017 in hight school</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+
+  <section data-index="0" class="detail">
+    <div class="detail-div3 grid detail-pos">
+      <div class="text-area3">
+        <h1 class="h1-title">大綜電腦</h1>
+        <h4 class="h4-title">
+          大二時看到以前的高中同學去硬體公司上班，想說也去應徵看看，最一開始是在富邦幫他們的電腦定期保養，後來調到王品餐廳處理報修Pos機器與更換，雖然超級累但是同事們感情都還不錯而且常常一起開車到各地修完後都會分享哪邊有隱藏美食，後來辭職後我變超胖。
+        </h4>
+      </div>
+      <figure class="fig-p3 fig">
+        <img src="index-img/Bringing-Life.jpg" alt="my colleague">
+        <figcaption>2018 my colleague</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+
+  <section data-index="0" class="detail">
+    <div class="detail-div4 grid detail-pos">
+      <div class="text-area4">
+        <h1 class="h1-title">中國龍</h1>
+        <h4 class="h4-title">大三由於接觸到C#課程，學習資料庫連接原理及通訊封包程式碼撰寫，在暑假時應徵了網頁切版的工讀，且在學校的教資中心幫忙更新官網，漸漸對寫程式產生興趣。
+        </h4>
+      </div>
+      <figure class="fig-p4 fig">
+        <img src="index-img/china-dragon.jpg" alt="my supervisor">
+        <figcaption>2019 supervisor and I</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+
+  <section data-index="0" class="detail">
+    <div class="detail-div5 grid detail-pos">
+      <div class="text-area5">
+        <h4 class="h4-title">我參加台東大學論文資訊研討會，用 NodeJS + MongoDB 來建立一個可分析文章的情緒是偏正面還是負面。</h4>
+
+        <div class="btn"><a href="#" onclick="dlBtn()">下載PDF看詳細</a></div>
+        <a href="/profile/portfolio/attachment?vno=75ej6mc72&amp;fileId=upload1&amp;fileName=NodeJS%E5%92%8CMongodb%E8%AB%96%E6%96%87%E5%8F%8A%E6%87%89%E7%94%A8.pdf"
+          target="_blank"></a>
+      </div>
+      <figure class="fig-p5 fig">
+        <img src="index-img/paper.JPG" alt="paper">
+        <figcaption>2020 my essay</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+
+  <section data-index="1" class="photo grid">
+    <div class="photo-div">
+      <div class="grid--item">
+        <div class="img" style="background-image: url(./index-img/p3.jpg);"></div>
+        <div class="container">
+          <h2>Snowy Hills</h2>
+          <div class="desc">Photo by Ales Krivec</div>
+        </div>
+      </div>
+      <div class="grid--item">
+        <div class="img" style="background-image: url(./index-img/p6.jpg);"></div>
+        <div class="container">
+          <h2>Snowy Hills</h2>
+          <div class="desc">Photo by Ales Krivec</div>
+        </div>
+      </div>
+      <div class="grid--item">
+        <div class="img" style="background-image: url(./index-img/p7.jpg);"></div>
+        <div class="container">
+          <h2>Snowy Hills</h2>
+          <div class="desc">Photo by Ales Krivec</div>
+        </div>
+      </div>
+      <div class="grid--item">
+        <div class="img" style="background-image: url(./index-img/p8.jpg);"></div>
+        <div class="container">
+          <h2>Snowy Hills</h2>
+          <div class="desc">Photo by Ales Krivec</div>
+        </div>
+      </div>
+      <div class="grid--item">
+        <div class="img" style="background-image: url(./index-img/p10.jpg);"></div>
+        <div class="container">
+          <h2>Snowy Hills</h2>
+          <div class="desc">Photo by Ales Krivec</div>
+        </div>
+      </div>
+      <div class="grid--item">
+        <div class="img" style="background-image: url(./index-img/p11.jpg);"></div>
+        <div class="container">
+          <h2>Snowy Hills</h2>
+          <div class="desc">Photo by Ales Krivec</div>
+        </div>
+      </div>
+      <div class="grid--item">
+        <div class="img" style="background-image: url(./index-img/p14.jpg);"></div>
+        <div class="container">
+          <h2>Snowy Hills</h2>
+          <div class="desc">Photo by Ales Krivec</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section data-index="2" class="game">
+    <div class="game-div"></div>
+  </section>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js"></script>
+  <script src="js/intro.js"></script>
+  <!-- <script src="js/scroll.js"></script> -->
+</body>
+
+</html>

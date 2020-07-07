@@ -1,0 +1,256 @@
+@import "./music.scss";
+@import "./hexagon.scss";
+
+$pagewordColor: #fff;
+
+%z1 {
+ z-index: 1;
+}
+%z2 {
+ z-index: 2;
+}
+%z3 {
+ z-index: 3;
+}
+
+* {
+ color: $pagewordColor;
+}
+a {
+ text-decoration: none;
+}
+
+html {
+ box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+ box-sizing: inherit;
+}
+
+@mixin grid {
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 20px;
+ @content;
+}
+
+section {
+ min-height: 100vh;
+ display: flex;
+ justify-content: center;
+ background-color: #000;
+ img {
+  width: 100%;
+ }
+}
+
+section:nth-child(6) {
+ min-height: 70vh;
+}
+
+section:nth-child(7) {
+ min-height: 70vh;
+}
+
+h4 {
+ @extend %z2;
+}
+
+.detail-div {
+ @include grid {
+  grid-template-areas: ". p1w p1w p1 p1 .";
+ }
+
+ @extend %z1;
+}
+
+.detail-div2 {
+ @include grid {
+  grid-template-areas: ". p2 p2 p2w p2w .";
+ }
+
+ @extend %z1;
+}
+
+.detail-div3 {
+ @include grid {
+  grid-template-areas: ". p3w p3w p3 p3 .";
+ }
+
+ @extend %z1;
+}
+
+.detail-div4 {
+ @include grid {
+  grid-template-areas: ". p4 p4 p4w p4w .";
+ }
+
+ @extend %z1;
+}
+
+.detail-div5 {
+ @include grid {
+  grid-template-areas: ". p5w p5w p5 p5 .";
+ }
+
+ @extend %z1;
+}
+
+.detail-pos {
+ width: 100%;
+ overflow: hidden;
+}
+
+.text-area {
+ grid-area: p1w;
+}
+
+.text-area2 {
+ grid-area: p2w;
+}
+
+.text-area3 {
+ grid-area: p3w;
+}
+
+.text-area4 {
+ grid-area: p4w;
+
+}
+
+.text-area5 {
+ grid-area: p5w;
+ .btn {
+  background-color: #5550;
+  color: $pagewordColor;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: solid 0.5px $pagewordColor;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  &:hover {
+   background-color: #d3d3d354;
+  }
+ }
+}
+
+.fig {
+ z-index: 1;
+ max-width: 100vh;
+ overflow: hidden;
+}
+
+.fig-p1 {
+ grid-area: p1;
+}
+
+.fig-p2 {
+ grid-area: p2;
+}
+
+.fig-p3 {
+ grid-area: p3;
+}
+
+.fig-p4 {
+ grid-area: p4;
+}
+
+.fig-p5 {
+ grid-area: p5;
+}
+
+.detail-div h1 {
+ margin-bottom: 20px;
+ color: red;
+}
+
+//-------------nav----------
+
+.dark-header {
+ background-color: #5f5f5f75;
+ color: white;
+ position: sticky;
+ top: 0;
+ z-index: 3;
+ padding: 20px;
+ opacity: 1;
+ @include grid {
+  grid-template-areas: "logo .  . navlist navlist navlist";
+ }
+
+ .brand-logo {
+  grid-area: logo;
+  width: 100%;
+  .logo {
+   width: 50px;
+   margin-right: 0.5rem;
+  }
+ }
+ .content {
+  grid-area: navlist;
+  width: 100%;
+  .main-nav {
+   display: inline-flex;
+   .ul-nav {
+    color: red;
+    li {
+     display: inline;
+     margin-left: 1rem;
+     cursor: pointer;
+     margin: 30px;
+     color: red;
+    }
+   }
+  }
+ }
+}
+
+//-------------home--------
+
+.home-div {
+ height: 80vh;
+ width: 100%;
+ align-items: center;
+ @include grid {
+  grid-template-areas: ". welcome welcome welcome welcome .";
+ }
+ .welcome {
+  grid-area: welcome;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffc;
+  font-weight: bolder;
+  opacity: 0;
+  .h4-title {
+   margin: 0;
+  }
+
+  .h1-title {
+   font-size: 3rem;
+   letter-spacing: 10px;
+   margin: 0;
+   margin-top: 0;
+   text-align: left;
+   font-size: 3rempx;
+
+  }
+ }
+}
+
+//-------------photo
+.photo {
+ @include grid {
+  grid-template-areas: ". photo photo photo photo .";
+  .photo-div {
+   grid-area:photo;
+  }
+ }
+}
+
