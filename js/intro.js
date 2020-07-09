@@ -2,9 +2,46 @@
 var tl = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger)
 
-tl.from(".symbol", { duration: 6, display: "block", rotation: 360, opacity: 1 }, "-=1")
-tl.from(".dark-header,.ul-nav,.logo", { duration: 3, opacity: 1, ease: "power4.out",y:-40 }, "-=5")
-tl.to(".welcome", { duration: 1, y: -100, opacity: 1 }, "-=4.5")
+gsap.from(".symbol", { duration: 3, display: "block", rotation: 360, opacity: 1 })
+gsap.from(".dark-header", { duration: 1.5, opacity: 1, ease: "power4.out",y:-120 ,delay:1})
+gsap.from(".logo",{ duration: 1.5, opacity: 1, ease: "power4.out",y:-120 ,delay:1.4})
+gsap.from(".ul-nav",{ duration: 1.5, opacity: 1, ease: "power4.out",y:-120 ,delay:1.8})
+gsap.from(".play-music",{ duration: 1.5, opacity: 1, ease: "power4.out",x:400 ,delay:1.8})
+// tl.to(".welcome", { duration: 1, y: -100, opacity: 1 }, "-=4.5")
+
+
+tl.from(".welcome", {
+  scrollTrigger: {
+   trigger: ".welcome",
+  },
+  duration: 2,
+  opacity: 0,
+  ease: "power4.out",
+  x:-100,
+  delay:0.5
+ })
+
+ gsap.from(".grid--item", {
+  scrollTrigger: {
+    trigger: ".grid--item",
+   },
+  duration: 2,
+  scale: 0.5, 
+  opacity: 0, 
+  delay: 0.5, 
+  stagger: 0.2,
+  ease: "none", 
+});
+
+gsap.from(".contact", {
+  scrollTrigger: {
+    trigger: ".contact",
+   },
+  duration: 0.6,
+  opacity: 0, 
+  y:-150,
+  ease: "none", 
+});
 
 var tlSection = gsap.timeline();
 
@@ -45,6 +82,10 @@ music.onpause = function() {
   // }
   
 };
+
+// function line(){
+//   document.getElementsByClassName("lineBtn")[0].classList.add('share');
+// }
 
 // var photo = new Array();
 //   photo[0]= "./index-img/p1.jpg"

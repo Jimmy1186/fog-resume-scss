@@ -13,6 +13,10 @@ $pagewordColor: #fff;
  z-index: 3;
 }
 
+%sp {
+ transform: scale(1.2);
+}
+
 * {
  color: $pagewordColor;
 }
@@ -22,6 +26,9 @@ a {
 
 html {
  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+ display: none;
 }
 
 *,
@@ -44,6 +51,10 @@ section {
  background-color: #000;
  img {
   width: 100%;
+  transition-duration: 0.4s;
+  &:hover{
+   @extend %sp;
+  }
  }
 }
 
@@ -123,19 +134,7 @@ h4 {
 
 .text-area5 {
  grid-area: p5w;
- .btn {
-  background-color: #5550;
-  color: $pagewordColor;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: solid 0.5px $pagewordColor;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-  &:hover {
-   background-color: #d3d3d354;
-  }
- }
+ 
 }
 
 .fig {
@@ -167,6 +166,20 @@ h4 {
 .detail-div h1 {
  margin-bottom: 20px;
  color: red;
+}
+
+.btn {
+ background-color: #5550;
+ color: $pagewordColor;
+ font-size: 16px;
+ padding: 12px 24px;
+ border: solid 0.5px $pagewordColor;
+ cursor: pointer;
+ border-radius: 5px;
+ text-align: center;
+ &:hover {
+  background-color: #d3d3d354;
+ }
 }
 
 //-------------nav----------
@@ -227,7 +240,7 @@ h4 {
   flex-direction: column;
   color: #ffc;
   font-weight: bolder;
-  opacity: 0;
+  opacity: 1;
   .h4-title {
    margin: 0;
   }
@@ -238,7 +251,7 @@ h4 {
    margin: 0;
    margin-top: 0;
    text-align: left;
-   font-size: 3rempx;
+   font-size: 3rem;
 
   }
  }
@@ -246,11 +259,60 @@ h4 {
 
 //-------------photo
 .photo {
+ grid-area: h1;
+ 
+ padding-bottom: 10vh;
+ justify-content: center;
+ .welcome{
+  grid-area:h1;
+  .h1-title{
+   grid-column: span 6;
+   font-size:4rem;
+   z-index: 2;
+  }
+ }
  @include grid {
-  grid-template-areas: ". photo photo photo photo .";
+  grid-template-areas: 
+  ". h1 h1 h1 . ."
+  ". photo photo photo photo .";
   .photo-div {
    grid-area:photo;
   }
+  
  }
 }
 
+//--------------footer
+
+
+.contact {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 20vh;
+ background-color: $pagewordColor;
+ @extend %z3;
+ position: relative;
+ background-color: #414141c9;
+ ul{
+  padding: 0;
+  display: inline-flex;
+  li{
+   display: inline;
+   padding:0 20px;
+  }
+ }
+}
+.lineBtn {
+ span{
+  display: none;
+
+ }
+}
+// .share {
+ 
+//  span{
+//   display: block;
+//  }
+// }
