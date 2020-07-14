@@ -10,6 +10,46 @@ gsap.from(".play-music",{ duration: 1.5, opacity: 1, ease: "power4.out",x:400 ,d
 // tl.to(".welcome", { duration: 1, y: -100, opacity: 1 }, "-=4.5")
 
 
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementsByClassName("dark-header")[0].style.padding = "0";
+   
+  } else {
+    document.getElementsByClassName("dark-header")[0].style.padding = "20px";
+   
+  }
+}
+
+
+function navMenu(){
+  btn = document.getElementsByClassName("menu")[0]
+  menu = document.getElementsByClassName("content")[0]
+  ulNav = document.getElementsByClassName("ul-nav")[0]
+  var i = 0
+  if(ulNav.style.display=="block"){
+    
+    ulNav.style.display="none"
+    gsap.to(".dark-header", {
+      duration: 0.2,
+      clearProps:"height,fontSize"
+    });
+   
+  }
+  else{
+    ulNav.style.display="block";
+    gsap.to(".dark-header", {
+      duration: 0.2,
+      ease: "none", 
+      height:300,
+      fontSize:40
+    });
+   
+  }
+}
+
 tl.from(".welcome", {
   scrollTrigger: {
    trigger: ".welcome",

@@ -1,6 +1,13 @@
+$lp1024: 1024px;
+$tb768: 768px;
+$mb445: 445px;
+$mb375: 375px;
+
+
+
 .grid--item {
 	position: relative;
-	margin-top: -90px;
+	margin-top: -75px;
 	margin-right: 5px;
 	margin-left: 5px;
 	width: calc(33.33% - 10px);
@@ -8,32 +15,66 @@
 	//border-left: 4px solid #dedede;
 	//border-right: 4px solid #dedede;
 	transition: all 0.5s;
-	
+
 	overflow: hidden;
-	
-	 -webkit-clip-path: polygon(
-    50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
-  );
- 
-  clip-path: polygon(
-    50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
-  );
-	
+
+	-webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+
+	clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 
 	&:before {
 		display: block;
 		padding-top: 112.5%;
-		content: '';
+		content: "";
 	}
-	
+
 	&:nth-child(1),
-	&:nth-child(2) { margin-top: 0; }
-	
+	&:nth-child(2) {
+		margin-top: 0;
+	}
+
 	&:nth-child(7n - 1),
 	&:nth-child(1) {
-		margin-left: 185px;
+		margin-left: 164px;
 	}
 }
+@media screen and (max-width: $lp1024) {
+	.grid--item {
+		margin-top: -45px;
+		&:nth-child(7n - 1),
+		&:nth-child(1) {
+			@media screen and (max-width: $lp1024) {
+				margin-left: 118px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tb768) {
+	.grid--item {
+		margin-top: -35px;
+		&:nth-child(7n - 1),
+		&:nth-child(1) {
+			@media screen and (max-width: $tb768) {
+				margin-left: 90px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mb445) {
+	.grid--item {
+		margin-top: -15px;
+		&:nth-child(7n - 1),
+		&:nth-child(1) {
+			@media screen and (max-width: $mb445) {
+				margin-left: 53px;
+			}
+		}
+	}
+}
+
+
 
 .img {
 	position: absolute;
@@ -41,20 +82,16 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	
+
 	background-position: center center;
 	background-size: cover;
-	
+
 	overflow: hidden;
-	
-	-webkit-clip-path: polygon(
-			50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
-		);
- 	
-		clip-path: polygon(
-			50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
-		);
-	
+
+	-webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+
+	clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+
 	&:before,
 	&:after {
 		position: absolute;
@@ -62,26 +99,26 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		content: '';
+		content: "";
 		opacity: 0;
 		transition: opacity 0.5s;
 	}
-	
+
 	&:before {
 		background: rgba(purple, 0.25);
 	}
-	
+
 	&:after {
 		background: linear-gradient(to top, transparent, rgba(black, 0.5), transparent);
 	}
 }
 
-.container { 
+.container {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	width: 100%;
-	
+
 	opacity: 0;
 	text-align: center;
 	color: white;
@@ -89,33 +126,27 @@
 	backface-visibility: hidden;
 	transform: translate(-50%, -50%) scale(0.9);
 	transition: all 0.5s;
-	
-	-webkit-shape-outside:   polygon(
-    50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
-  );
-	
-	shape-outside:   polygon(
-    50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
-		);
-		h1,
-h2 {
-	font-family: 'Arapey';
-	font-style: italic;
-	font-weight: 400;
-}
 
-h1 {
-	margin-top: 90px;
-	text-align: center;
-	font-size: 56px;
-	color: #242424;
-}
+	-webkit-shape-outside: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 
-h2 {
-	font-size: 32px;
-	
-}
+	shape-outside: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+	h1,
+	h2 {
+		font-family: "Arapey";
+		font-style: italic;
+		font-weight: 400;
+	}
 
+	h1 {
+		margin-top: 90px;
+		text-align: center;
+		font-size: 56px;
+		color: #242424;
+	}
+
+	h2 {
+		font-size: 32px;
+	}
 
 	&:before,
 	&:after {
@@ -124,7 +155,7 @@ h2 {
 		width: 0.75em;
 		height: 0.03em;
 		background: turquoise;
-		content: '';
+		content: "";
 		vertical-align: middle;
 		transition: all 0.3s;
 	}
@@ -132,7 +163,7 @@ h2 {
 
 .desc {
 	margin: 1em 0 0;
-	font-family: 'ATC Overlook';
+	font-family: "ATC Overlook";
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -141,12 +172,14 @@ h2 {
 	color: turquoise;
 }
 
-
 .grid--item:hover {
-
 	.img:before,
 	.img:after,
-	.container { opacity: 1; }
-	
-	.container { transform: translate(-50%, -50%) scale(1); }
+	.container {
+		opacity: 1;
+	}
+
+	.container {
+		transform: translate(-50%, -50%) scale(1);
+	}
 }

@@ -1,10 +1,14 @@
+$lp1024 : 1024px;
+$tb768 : 768px;
+$mb445 :445px;
+$mb375 : 375px;
+
 
 .fog {
- position: relative;
+ position: fixed;
  width: 100%;
  height: 100%;
  background-color: #000;
- position: absolute;
 
  .absolute-bg {
   background-image: url("../index-img/town.jpg");
@@ -23,7 +27,9 @@
   overflow: hidden;
   animation: bg 3s linear infinite;
   animation-direction: alternate;
-  
+  @media (max-width:$mb445){
+    transform: scale(3.5);
+   }
 }
  .fog-container {
   position: fixed;
@@ -47,6 +53,9 @@
   .fog-img {
    width: 20000px;
    height: 100vh;
+   @media (max-width:$mb445){
+    height: 100%;
+   }
   
 
    @keyframes marquee {
@@ -149,4 +158,51 @@
  100% {
   height: 4px;
  }
+}
+
+//-----navbar menu
+
+.menu {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  @media (max-width:$mb445){
+    display: flex;
+   }
+}
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+  stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
 }

@@ -1,6 +1,6 @@
 .grid--item {
   position: relative;
-  margin-top: -90px;
+  margin-top: -75px;
   margin-right: 5px;
   margin-left: 5px;
   width: calc(33.33% - 10px);
@@ -13,7 +13,7 @@
 .grid--item:before {
   display: block;
   padding-top: 112.5%;
-  content: '';
+  content: "";
 }
 
 .grid--item:nth-child(1), .grid--item:nth-child(2) {
@@ -21,7 +21,43 @@
 }
 
 .grid--item:nth-child(7n - 1), .grid--item:nth-child(1) {
-  margin-left: 185px;
+  margin-left: 164px;
+}
+
+@media screen and (max-width: 1024px) {
+  .grid--item {
+    margin-top: -45px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-width: 1024px) {
+  .grid--item:nth-child(7n - 1), .grid--item:nth-child(1) {
+    margin-left: 118px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid--item {
+    margin-top: -35px;
+  }
+}
+
+@media screen and (max-width: 768px) and (max-width: 768px) {
+  .grid--item:nth-child(7n - 1), .grid--item:nth-child(1) {
+    margin-left: 90px;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .grid--item {
+    margin-top: -15px;
+  }
+}
+
+@media screen and (max-width: 445px) and (max-width: 445px) {
+  .grid--item:nth-child(7n - 1), .grid--item:nth-child(1) {
+    margin-left: 53px;
+  }
 }
 
 .img {
@@ -42,7 +78,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  content: '';
+  content: "";
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -72,7 +108,7 @@
 
 .container h1,
 .container h2 {
-  font-family: 'Arapey';
+  font-family: "Arapey";
   font-style: italic;
   font-weight: 400;
 }
@@ -94,14 +130,14 @@
   width: 0.75em;
   height: 0.03em;
   background: turquoise;
-  content: '';
+  content: "";
   vertical-align: middle;
   transition: all 0.3s;
 }
 
 .desc {
   margin: 1em 0 0;
-  font-family: 'ATC Overlook';
+  font-family: "ATC Overlook";
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: bold;

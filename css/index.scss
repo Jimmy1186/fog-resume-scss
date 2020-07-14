@@ -2,6 +2,10 @@
 @import "./hexagon.scss";
 
 $pagewordColor: #fff;
+$lp1024 : 1024px;
+$tb768 : 768px;
+$mb445 :445px;
+$mb375 : 375px;
 
 %z1 {
  z-index: 1;
@@ -19,6 +23,7 @@ $pagewordColor: #fff;
 
 * {
  color: $pagewordColor;
+ font-family: "Arapey";
 }
 a {
  text-decoration: none;
@@ -26,6 +31,7 @@ a {
 
 html {
  box-sizing: border-box;
+ min-width: fit-content;
 }
 ::-webkit-scrollbar {
  display: none;
@@ -55,7 +61,17 @@ section {
   &:hover{
    @extend %sp;
   }
+  @media (max-width:$tb768){
+   width: 80%;
+  }
+  @media (max-width:$mb445){
+   width: 100%;
+  }
  }
+ @media (max-width:$lp1024){
+  min-height: 85vh;
+ }
+
 }
 
 section:nth-child(6) {
@@ -74,40 +90,72 @@ h4 {
  @include grid {
   grid-template-areas: ". p1w p1w p1 p1 .";
  }
-
  @extend %z1;
+
+ @media (max-width:$tb768){
+  @include grid {
+  grid-template-areas: 
+  ". p1w p1w p1w p1w ."
+  ". p1 p1 p1 p1 .";
+ }
+ }
+ 
 }
 
 .detail-div2 {
  @include grid {
   grid-template-areas: ". p2 p2 p2w p2w .";
  }
-
  @extend %z1;
+ @media (max-width:$tb768){
+  @include grid {
+  grid-template-areas: 
+  ". p2w p2w p2w p2w ."
+  ". p2 p2 p2 p2 .";
+ }
+ }
 }
 
 .detail-div3 {
  @include grid {
   grid-template-areas: ". p3w p3w p3 p3 .";
  }
-
  @extend %z1;
+ @media (max-width:$tb768){
+  @include grid {
+  grid-template-areas: 
+  ". p3w p3w p3w p3w ."
+  ". p3 p3 p3 p3 .";
+ }
+ }
 }
 
 .detail-div4 {
  @include grid {
   grid-template-areas: ". p4 p4 p4w p4w .";
  }
-
  @extend %z1;
+ @media (max-width:$tb768){
+  @include grid {
+  grid-template-areas: 
+  ". p4w p4w p4w p4w ."
+  ". p4 p4 p4 p4 .";
+ }
+ }
 }
 
 .detail-div5 {
  @include grid {
   grid-template-areas: ". p5w p5w p5 p5 .";
  }
-
  @extend %z1;
+ @media (max-width:$tb768){
+  @include grid {
+  grid-template-areas: 
+  ". p5w p5w p5w p5w ."
+  ". p5 p5 p5 p5 .";
+ }
+ }
 }
 
 .detail-pos {
@@ -141,10 +189,14 @@ h4 {
  z-index: 1;
  max-width: 100vh;
  overflow: hidden;
+ @media (max-width:$tb768){
+  min-height: 90vh;
+ }
 }
 
 .fig-p1 {
  grid-area: p1;
+
 }
 
 .fig-p2 {
@@ -153,10 +205,16 @@ h4 {
 
 .fig-p3 {
  grid-area: p3;
+ @media (max-width:$tb768){
+  min-height: 65vh;
+ }
 }
 
 .fig-p4 {
  grid-area: p4;
+ @media (max-width:$tb768){
+  min-height: 65vh;
+ }
 }
 
 .fig-p5 {
@@ -182,6 +240,8 @@ h4 {
  }
 }
 
+
+
 //-------------nav----------
 
 .dark-header {
@@ -192,9 +252,16 @@ h4 {
  z-index: 3;
  padding: 20px;
  opacity: 1;
- @include grid {
-  grid-template-areas: "logo .  . navlist navlist navlist";
+ transition: 0.6s;
+ @media (max-width:$mb445){
+  grid-template-areas: "logo . . . navlist navlist";
  }
+ @include grid {
+  grid-template-areas: "logo navlist navlist navlist navlist navlist";
+ }
+ 
+
+
 
  .brand-logo {
   grid-area: logo;
@@ -207,16 +274,30 @@ h4 {
  .content {
   grid-area: navlist;
   width: 100%;
+  padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
   .main-nav {
    display: inline-flex;
+  
    .ul-nav {
     color: red;
+    @media (min-width:$mb445){
+     display: flex;
+    }
+    @media (max-width:$mb445){
+     display: none;
+    }
     li {
      display: inline;
      margin-left: 1rem;
      cursor: pointer;
-     margin: 30px;
+     margin: 5px 25px 5px 5px;
      color: red;
+     transition: 0.2s;
+     &:hover{
+      font-size: 1.5rem;
+     }
     }
    }
   }
@@ -236,6 +317,7 @@ h4 {
   grid-area: welcome;
   z-index: 1;
   display: flex;
+  padding-bottom: 200px;
   justify-content: center;
   flex-direction: column;
   color: #ffc;
@@ -302,6 +384,9 @@ h4 {
    display: inline;
    padding:0 20px;
   }
+ }
+ @media (max-width:$lp1024){
+  height: 100%;
  }
 }
 .lineBtn {
