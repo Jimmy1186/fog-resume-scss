@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="shortcut icon" href="#" />
+ <link rel="stylesheet" href="css/normalize.css">
+ <link rel="stylesheet" href="css/slide.css">
+ <link rel="stylesheet" href="css/work-detail.css">
+ <title>Work Detail</title>
+</head>
+<body>
+  <div class="open">
+    <div class="symbol"></div>
+  </div>
+ <div class="fog">
+  <figure class="bg1">
+  </figure>
+  <div class="fog-container">
+    <div class="fog-img first-img"></div>
+    <div class="fog-img second-img"></div>
+  </div>
+</div>
+<div class="play-music">
+  <div id="music-animation" class="music-animation">
+    <span class="bar bar1"></span>
+    <span class="bar bar2"></span>
+    <span class="bar bar3"></span>
+    <span class="bar bar4"></span>
+    <span class="bar bar5"></span>
+  </div>
+  <div class="music-toggle"><a onClick="togglePlay()" id="toggle" data-text-swap="Music on">Music off</a></div>
+</div>
+<audio id="music" loop="loop" src="ost/dayofnight.mp3"></audio>
+<div class="dark-header grid">
+  <div class="brand-logo">
+    <img class="logo" alt="logo" src="./symbol/babel.png">
+  </div>
+  <div class="content">
+    <nav class="main-nav">
+     <ul class="ul-nav">
+      <li><a href="index.html" class="li-home">Home</a></li>
+      <li><a href="work-detail.html" class="li-detail">Work Detial</a></li>
+      <li><a class="li-photo">Game</a></li>
+      <!-- <li><a class="li-game">Game</a></li> -->
+      <!-- <div class="square"></div> -->
+    </ul>
+      <button class="menu" value="ON" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'));navMenu()" aria-label="Main Menu">
+        <svg width="50" height="50" viewBox="0 0 100 100">
+          <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+          <path class="line line2" d="M 20,50 H 80" />
+          <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+        </svg>
+      </button>
+    </nav>
+  </div>
+</div>
+
+<section class="grid grid-experience">
+  <h1>在大綜電腦的生活</h1>
+ <div class="photo-container">
+ 
+
+ <div class="slideshow-container">
+
+   <div class="photo-Slides fade">
+     <div class="numbertext">1 / 12</div>
+     <img src="detailimg/1.jpg" style="width:100%">
+     <div class="text">進公司你會看到的畫面</div>
+   </div>
+   
+   
+   <div class="photo-Slides fade">
+     <div class="numbertext">2 / 12</div>
+     <img src="detailimg/3.jpg" style="width:100%">
+     <div class="text">繁瑣的步驟</div>
+   </div>
+
+   <div class="photo-Slides fade">
+     <div class="numbertext">3 / 12</div>
+     <img src="detailimg/4.jpg" style="width:100%">
+     <div class="text">開車其實很好玩</div>
+   </div>
+
+
+  <div class="photo-Slides fade">
+    <div class="numbertext">4 / 12</div>
+    <img src="detailimg/5.jpg" style="width:100%">
+    <div class="text">出單機</div>
+  </div>
+
+  <div class="photo-Slides fade">
+    <div class="numbertext">5 / 12</div>
+    <img src="detailimg/6.jpg" style="width:100%">
+    <div class="text">倉庫</div>
+  </div>
+
+
+  <div class="photo-Slides fade">
+    <div class="numbertext">6 / 12</div>
+    <img src="detailimg/8.jpg" style="width:100%">
+    <div class="text">還是要想辦法解決問題</div>
+  </div>
+
+  <div class="photo-Slides fade">
+    <div class="numbertext">7 / 12</div>
+    <img src="detailimg/9.jpg" style="width:100%">
+    <div class="text">墨水</div>
+  </div>
+
+  <div class="photo-Slides fade">
+    <div class="numbertext">8 / 12</div>
+    <img src="detailimg/10.jpg" style="width:100%">
+    <div class="text">王品的飲料杯</div>
+  </div>
+
+  <div class="photo-Slides fade">
+    <div class="numbertext">9 / 12</div>
+    <img src="detailimg/11.jpg" style="width:100%">
+    <div class="text">花蓮真的很美</div>
+  </div>
+
+  <div class="photo-Slides fade">
+    <div class="numbertext">10 / 12</div>
+    <img src="detailimg/12.jpg" style="width:100%">
+    <div class="text">最近一次的聚餐</div>
+  </div>
+   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+   <a class="next" onclick="plusSlides(1)">&#10095;</a> 
+
+   </div>
+   <br>
+   
+   <div style="text-align:center">
+     <span class="dot" onclick="currentSlide(1)"></span> 
+     <span class="dot" onclick="currentSlide(2)"></span> 
+     <span class="dot" onclick="currentSlide(3)"></span> 
+     <span class="dot" onclick="currentSlide(4)"></span> 
+     <span class="dot" onclick="currentSlide(5)"></span> 
+     <span class="dot" onclick="currentSlide(6)"></span> 
+     <span class="dot" onclick="currentSlide(7)"></span> 
+     <span class="dot" onclick="currentSlide(8)"></span> 
+     <span class="dot" onclick="currentSlide(9)"></span> 
+     <span class="dot" onclick="currentSlide(10)"></span> 
+   </div>
+ </div>
+<div class="exp-intro">
+ 
+ <!-- <div class="exp-Slides fade">
+   <div class="company-name">中國龍</div>
+   <div class="position">網頁切版</div>
+   <div class="see-more"></div>
+   <div class="detail-btn">Read More</div>
+ </div> -->
+ <div class="exp-Slides fade">
+  <div class="company-name">剛來這間公司的時候...</div>
+  <div class="see-more">剛來這間公司的時候，跟我想像的一樣;滿桌的電腦設備，到處都是硬碟，甚至練連地板都是。</div>
+</div>
+
+<div class="exp-Slides fade">
+  <div class="company-name">跑富邦</div>
+  <div class="see-more">我接到的第一個任務是幫每個人的電腦定期保養(安裝新防毒，設定BIOS...)，步驟超多我還寫下來</div>
+</div>
+
+<div class="exp-Slides fade">
+  <div class="company-name">跑王品</div>
+  <div class="see-more">因為跑富邦就是一直做同樣的事，後來剛好有機會就轉跑王品，不過要有汽車駕照，那時候想說慘了，早上上課晚上上班根本沒時間，後來看駕訓班最早是6點，心中燃起一道曙光(累得要死哈哈)</div>
+</div>
+
+<div class="exp-Slides fade">
+  <div class="company-name">永無止境的維修</div>
+  <div class="see-more">王品最容易壞的就是出單機，不過也是最簡單出處裡的。</div>
+</div>
+
+<div class="exp-Slides fade">
+  <div class="company-name">倉庫</div>
+  <div class="see-more">神奇的地方，有時候會看到同事在面睡覺，或是印度佬在裡面划手機<br>
+  我因為家離公司近，六日也上班，所以特例有意把倉庫鑰匙，好處方便，壞處就是如果有同事跑晚班太晚回公司沒辦法開門就會找我。
+  </div>
+</div>
+
+<div class="exp-Slides fade">
+  <div class="company-name">公司車全部被開走??</div>
+  <div class="see-more">有時候業務會開我們工程部的車，然後我們就要祈禱當天沒有桃園或宜蘭的報修。不然真的慘</div>
+</div>
+
+<div class="exp-Slides fade">
+  <div class="company-name">萬惡墨水</div>
+  <div class="see-more">另一個最常壞的或需要定期去的就是加墨水，當初覺得這應該是個簡單的差，實際去最很吃經驗。<br>
+  第一次跟著前輩去修，印表機顯示"無墨水"，我按開墨匣還是滿的，前輩卻叫店員拿出橡皮差，接起後便往墨匣的金片上奮力地擦拭直到金光閃閃，接著按回印表機就成功了。<br>
+  當我以為這種案例就是這樣處理，沒想的第二次印表機相同的顯示，墨匣滿，我天真地拿橡皮擦擦得半天，卻還是顯示"無墨水"，這時前輩叫我仔細看墨匣的導管，原來是裡有空氣，便無法成功吸墨水，便將我手中的墨匣接過抬至比印表機高，接著打開墨匣其中一個塞子來改變液壓，半分鐘後成功修復問題。<br>
+  當然這也只是其中一種修復幫法，還有很多要考量的問題所，剛處理這種問題時運氣好1分鐘就解決，運氣差的話整個晚上可能就在修那台印表機，隨著工作經驗的累積，原本要處裡可能要花10分鐘，現在1分鐘就可以解決。<br>
+  沒想到我在這最大的工作成就是這個，我還把一些經驗傳承給新進的人。
+
+  </div>
+</div>
+
+<div class="exp-Slides fade">
+  <div class="company-name">店家認識你的臉</div>
+  <div class="see-more">我在修得滿手墨水時他們有時會送你一杯飲料。</div>
+</div>
+
+<div class="exp-Slides fade">
+  <div class="company-name">來自花蓮的報修</div>
+  <div class="see-more">修完後一整天就是你的時間，租個機車，沿海御風的享受。</div>
+</div>
+
+<div class="exp-Slides fade">
+  <div class="company-name">聚餐</div>
+  <div class="see-more">我真的很慶幸遇到他們，才能學到那麼多，也留下很多美好的回憶。<br>
+  
+  </div>
+</div>
+
+
+ 
+</div>
+
+</section>
+<footer>
+  <div class="contact">
+    <h2>Contact Me</h2>
+    <ul>
+      <li><div class="btn">Line <span>ID : eason1186</span></div></li>
+      <li><div class="btn"><a href="https://www.facebook.com/profile.php?id=100004062635044" target="_blank">FaceBook</div></li>
+      <li><div class="btn"><a href="https://github.com/Jimmy1186?tab=repositories" target="_blank">Github</a></div></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js"></script>
+<script src="js/intro.js"></script>
+<script src="js/slide.js"></script>
+</body>
+</html>

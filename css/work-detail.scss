@@ -1,0 +1,120 @@
+$lp1024 : 1024px;
+$tb768 : 768px;
+$mb445 :445px;
+$mb375 : 375px;
+
+
+@import "./music.scss";
+%sp {
+ transform: scale(1.2);
+}
+
+section {
+
+ z-index: 1;
+ min-height: 100vh;
+ display: flex;
+ justify-content: center;
+
+ img {
+  width: 100%;
+  display: flex;
+
+  @media (min-width:$lp1024){
+   min-height: 400px;
+  }
+  @media (max-width:$tb768){
+   width: 80%;
+  }
+  @media (max-width:$mb445){
+   width: 100%;
+  }
+ }
+ @media (max-width:$lp1024){
+  min-height: 85vh;
+ }
+
+}
+
+.play-music{
+ @media (min-width:$mb445){
+  display: flex;
+ }
+ @media (max-width:$mb445){
+  display: none;
+ }
+}
+
+.grid {
+ z-index: 0;
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 20px;
+ position: relative;
+}
+
+.grid-experience {
+ h1{
+  grid-area: h1;
+  text-align: center;
+  margin-bottom: 0;
+ }
+ grid-template-areas: 
+ ". h1 h1 h1 h1 ."
+ ". photo photo exp exp .";
+ @media (max-width:$tb768){
+  grid-template-areas: 
+ ". h1 h1 h1 h1 ."
+ "photo photo photo exp exp exp";
+ }
+ @media (max-width:$mb445){
+  grid-template-areas: 
+ ". h1 h1 h1 h1 ."
+ "photo photo photo photo photo photo"
+ "exp exp exp exp exp exp";
+ }
+ .photo-container {
+  grid-area: photo;
+  @media (max-width:$mb445){
+   overflow-y: auto;
+  }
+  .photo-Slides {
+   height: 480px;
+   padding: 30px 0 10px 20px;
+   @media (min-width:$lp1024){
+    min-height: 400px;
+   }
+   @media (max-width:$mb445){
+    overflow-y: auto;
+   }
+   img{
+    height: 480px;
+    object-fit: cover;
+   }
+  }
+ }
+ .exp-intro {
+  grid-area: exp;
+  .exp-Slides {
+   align-content: center;
+   text-align: center;
+   padding: 30px;
+   @media (max-width:$mb445){
+    position: relative;
+    bottom: 50px;
+   }
+   .during {
+    padding-bottom: 50px;
+   }
+   .company-name {
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 2rem;
+   }
+   .see-more{
+    text-align: initial;
+    line-height: 1.3rem;
+   }
+  }
+ }
+}

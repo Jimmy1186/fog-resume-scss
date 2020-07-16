@@ -7,27 +7,12 @@ $tb768 : 768px;
 $mb445 :445px;
 $mb375 : 375px;
 
-%z1 {
- z-index: 1;
-}
-%z2 {
- z-index: 2;
-}
-%z3 {
- z-index: 3;
-}
+
 
 %sp {
  transform: scale(1.2);
 }
 
-* {
- color: $pagewordColor;
- font-family: "Arapey";
-}
-a {
- text-decoration: none;
-}
 
 html {
  box-sizing: border-box;
@@ -58,9 +43,9 @@ section {
  img {
   width: 100%;
   transition-duration: 0.4s;
-  &:hover{
-   @extend %sp;
-  }
+  // &:hover{
+  //  @extend %sp;
+  // }
   @media (max-width:$tb768){
    width: 80%;
   }
@@ -83,6 +68,7 @@ section:nth-child(7) {
 }
 
 h4 {
+ letter-spacing: 0.4rem;
  @extend %z2;
 }
 
@@ -242,67 +228,7 @@ h4 {
 
 
 
-//-------------nav----------
 
-.dark-header {
- background-color: #5f5f5f75;
- color: white;
- position: sticky;
- top: 0;
- z-index: 3;
- padding: 20px;
- opacity: 1;
- transition: 0.6s;
- @media (max-width:$mb445){
-  grid-template-areas: "logo . . . navlist navlist";
- }
- @include grid {
-  grid-template-areas: "logo navlist navlist navlist navlist navlist";
- }
- 
-
-
-
- .brand-logo {
-  grid-area: logo;
-  width: 100%;
-  .logo {
-   width: 50px;
-   margin-right: 0.5rem;
-  }
- }
- .content {
-  grid-area: navlist;
-  width: 100%;
-  padding-right: 10px;
-  display: flex;
-  justify-content: flex-end;
-  .main-nav {
-   display: inline-flex;
-  
-   .ul-nav {
-    color: red;
-    @media (min-width:$mb445){
-     display: flex;
-    }
-    @media (max-width:$mb445){
-     display: none;
-    }
-    li {
-     display: inline;
-     margin-left: 1rem;
-     cursor: pointer;
-     margin: 5px 25px 5px 5px;
-     color: red;
-     transition: 0.2s;
-     &:hover{
-      font-size: 1.5rem;
-     }
-    }
-   }
-  }
- }
-}
 
 //-------------home--------
 
@@ -324,6 +250,7 @@ h4 {
   font-weight: bolder;
   opacity: 1;
   .h4-title {
+   letter-spacing: 0.4rem;
    margin: 0;
   }
 
@@ -348,6 +275,7 @@ h4 {
  .welcome{
   grid-area:h1;
   .h1-title{
+   letter-spacing: 0.2rem;
    grid-column: span 6;
    font-size:4rem;
    z-index: 2;
@@ -364,40 +292,6 @@ h4 {
  }
 }
 
-//--------------footer
 
-
-.contact {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- height: 20vh;
- background-color: $pagewordColor;
- @extend %z3;
- position: relative;
- background-color: #414141c9;
- ul{
-  padding: 0;
-  display: inline-flex;
-  li{
-   display: inline;
-   padding:0 20px;
-  }
- }
- @media (max-width:$lp1024){
-  height: 100%;
- }
-}
-.lineBtn {
- span{
-  display: none;
-
- }
-}
 // .share {
- 
-//  span{
-//   display: block;
-//  }
-// }
+

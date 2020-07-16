@@ -194,7 +194,7 @@ html {
   color: red;
 }
 
-@media (min-width: 446px) {
+@media (min-width: 2560px) {
   .dark-header .content .main-nav .ul-nav {
     display: flex;
   }
@@ -217,10 +217,6 @@ html {
 
 .dark-header .content .main-nav .ul-nav li:hover {
   font-size: 1.5rem;
-}
-
-.dark-header .content .main-nav .uln {
-  display: block;
 }
 
 .play-music {
@@ -383,4 +379,146 @@ html {
 .lineBtn span {
   display: none;
 }
-/*# sourceMappingURL=music.css.map */
+
+section {
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+section img {
+  width: 100%;
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  section img {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  section img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 445px) {
+  section img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  section {
+    min-height: 85vh;
+  }
+}
+
+@media (min-width: 445px) {
+  .play-music {
+    display: flex;
+  }
+}
+
+@media (max-width: 445px) {
+  .play-music {
+    display: none;
+  }
+}
+
+.grid {
+  z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+.grid-experience {
+  grid-template-areas: ". h1 h1 h1 h1 ." ". photo photo exp exp .";
+}
+
+.grid-experience h1 {
+  grid-area: h1;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .grid-experience {
+    grid-template-areas: ". h1 h1 h1 h1 ." "photo photo photo exp exp exp";
+  }
+}
+
+@media (max-width: 445px) {
+  .grid-experience {
+    grid-template-areas: ". h1 h1 h1 h1 ." "photo photo photo photo photo photo" "exp exp exp exp exp exp";
+  }
+}
+
+.grid-experience .photo-container {
+  grid-area: photo;
+}
+
+@media (max-width: 445px) {
+  .grid-experience .photo-container {
+    overflow-y: auto;
+  }
+}
+
+.grid-experience .photo-container .photo-Slides {
+  height: 480px;
+  padding: 30px 0 10px 20px;
+}
+
+@media (min-width: 1024px) {
+  .grid-experience .photo-container .photo-Slides {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 445px) {
+  .grid-experience .photo-container .photo-Slides {
+    overflow-y: auto;
+  }
+}
+
+.grid-experience .photo-container .photo-Slides img {
+  height: 480px;
+  object-fit: cover;
+}
+
+.grid-experience .exp-intro {
+  grid-area: exp;
+}
+
+.grid-experience .exp-intro .exp-Slides {
+  align-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+@media (max-width: 445px) {
+  .grid-experience .exp-intro .exp-Slides {
+    position: relative;
+    bottom: 50px;
+  }
+}
+
+.grid-experience .exp-intro .exp-Slides .during {
+  padding-bottom: 50px;
+}
+
+.grid-experience .exp-intro .exp-Slides .company-name {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 2rem;
+}
+
+.grid-experience .exp-intro .exp-Slides .see-more {
+  text-align: initial;
+  line-height: 1.3rem;
+}
+/*# sourceMappingURL=work-detail.css.map */

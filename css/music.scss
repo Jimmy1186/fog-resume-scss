@@ -2,16 +2,31 @@ $lp1024 : 1024px;
 $tb768 : 768px;
 $mb445 :445px;
 $mb375 : 375px;
+$pagewordColor: #fff;
 
+%z1 {
+  z-index: 1;
+ }
+ %z2 {
+  z-index: 2;
+ }
+ %z3 {
+  z-index: 3;
+ }
+* {
+  color: $pagewordColor;
+  
+  font-family: "Arapey","Microsoft YaHei";
+  
+ }
+ a {
+  text-decoration: none;
+ }
+::-webkit-scrollbar {
+  display: none;
+}
 
-.fog {
- position: fixed;
- width: 100%;
- height: 100%;
- background-color: #000;
-
- .absolute-bg {
-  background-image: url("../index-img/town.jpg");
+%bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -25,12 +40,76 @@ $mb375 : 375px;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-  animation: bg 3s linear infinite;
+ }
+ @mixin grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  @content;
+ }
+
+ a {
+  text-decoration: none;
+ }
+ 
+ html {
+  box-sizing: border-box;
+  min-width: fit-content;
+ }
+
+
+
+ .open{
+  min-height: 100% !important;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 4;
+  .symbol {
+    background-image: url(../symbol/sl.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 85px;
+    width: 85px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    opacity: 0;
+    
+   }
+}
+
+
+
+.fog {
+
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ background-color: #000;
+ .bg1{
+  @extend %bg;
+  background-image: url("../index-img/town.jpg");
+  animation: bg1 3s linear infinite;
   animation-direction: alternate;
+ }
+ .bg2{
+  @extend %bg;
+  background-image: url("../index-img/rust.jpg");
+  animation: bg2 3s linear infinite;
+  animation-direction: alternate;
+ }
+ .absolute-bg {
+
   @media (max-width:$mb445){
     transform: scale(3.5);
    }
+   
 }
+
  .fog-container {
   position: fixed;
   height: 100%;
@@ -66,7 +145,7 @@ $mb375 : 375px;
      transform: translate3d(-200vw, 0, 0);
     }
    }
-   @keyframes bg {
+   @keyframes bg1 {
     0% {
      opacity: 0.5;
     }
@@ -74,22 +153,88 @@ $mb375 : 375px;
      opacity: 1;
     }
    }
+   @keyframes bg2 {
+    0% {
+     opacity: 0.1;
+    }
+    100% {
+     opacity: 0.5;
+    }
+   }
   }
  }
- .symbol {
-  background-image: url(../symbol/sl.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 85px;
-  width: 85px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99;
-  opacity: 0;
- }
+
+ 
+ 
+ 
 }
+
+
+//-------------nav----------
+
+.dark-header {
+  background-color: #5f5f5f75;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 20px;
+  opacity: 1;
+  transition: 0.6s;
+  @media (max-width:$mb445){
+   grid-template-areas: "logo . . . navlist navlist";
+  }
+  @include grid {
+   grid-template-areas: "logo navlist navlist navlist navlist navlist";
+  }
+  
+ 
+ 
+ 
+  .brand-logo {
+   grid-area: logo;
+   width: 100%;
+   .logo {
+    width: 50px;
+    margin: 0.5rem;
+    
+   }
+  }
+  .content {
+   grid-area: navlist;
+   width: 100%;
+   padding-right: 10px;
+   display: flex;
+   justify-content: flex-end;
+   .main-nav {
+    display: inline-flex;
+   
+    .ul-nav {
+     color: red;
+     @media (min-width:446px){
+      display: flex;
+     }
+     @media (max-width:$mb445){
+      display: none;
+     }
+     li {
+      display: inline;
+      margin-left: 1rem;
+      cursor: pointer;
+      margin: 5px 25px 5px 5px;
+      color: red;
+      transition: 0.2s;
+      &:hover{
+       font-size: 1.5rem;
+      }
+     }
+    }
+    .uln{
+      display: block;
+    }
+   }
+  }
+ }
 
 .play-music {
  display: flex;
@@ -206,3 +351,36 @@ $mb375 : 375px;
   stroke-dashoffset: -134;
   stroke-width: 6;
 }
+
+
+//--------------footer
+
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  background-color: $pagewordColor;
+  @extend %z3;
+  position: relative;
+  background-color: #414141c9;
+  ul{
+   padding: 0;
+   display: inline-flex;
+   li{
+    display: inline;
+    padding:0 20px;
+   }
+  }
+  @media (max-width:$lp1024){
+   height: 100%;
+  }
+ }
+ .lineBtn {
+  span{
+   display: none;
+ 
+  }
+ }
